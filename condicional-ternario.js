@@ -21,3 +21,9 @@ console.log("Estoy", calificacion);
 // variable boleana que me indica si estoy aprobado o suspendido
 let estoyAprobado = nota >= 5;
 console.log("Estoy aprobado? ", estoyAprobado);
+
+if (estoyAprobado) {
+  console.log("Felicidades");
+} else {
+  console.log("Estudia más!");
+}
