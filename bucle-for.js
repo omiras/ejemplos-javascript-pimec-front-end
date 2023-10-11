@@ -23,5 +23,6 @@ let puntuacion = 3;
 
 for (let i = 0; i < puntuacion; i++) {
   console.log("Pintar circulo");
-  console.log("----------------");
 }
+
+console.log("----------------");
