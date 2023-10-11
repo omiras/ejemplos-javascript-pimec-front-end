@@ -2,6 +2,7 @@
  * Vamos a crear una función que dado un precio le aplique el 21% de IVA
  */
 
+//
 function calcularIVA(precio) {
   return precio * 0.21;
 }
