@@ -22,7 +22,7 @@ function mostrarMensaje() {
  * - Ejecutar una función
  */
 
-// mostrarMensaje();
+mostrarMensaje();
 // mostrarMensaje();
 // mostrarMensaje();
 
