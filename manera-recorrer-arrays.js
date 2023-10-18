@@ -21,7 +21,7 @@ console.log(saldo);
  * For...in
  */
 for (const index in movimientos) {
-  console.log("Estoy dentro del for..in: ", movimientos[index]);
+  console.log("Estoy dentro del for..in: ", index);
 }
 
 /**

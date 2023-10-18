@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titulo {
+            color: green;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: azure;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo" class="titulo" style="border: 1px solid black;">Who Is Online</h1>
+    <h2 onclick="alert('Has hecho click en Rumikub')">Rumikub</h2>
+    <p>Current users online: <span id="users-online">There is no one online</span> </p>
+    <p>Current users offline: </p>
+    <br>
+    <div id="panel-manolo">
+        Turno de ManoloDev
+        <button onclick="pasarTurnoAinhoa()">Pasar Turno</button>
+    </div>
+    <div id="panel-ainhoa" style="background-color: chartreuse; display: none">
+        Turno de AinhoaGamer
+        <button onclick="pasarTurnoManolo()">Pasar turno</button>
+    </div>
+
+    <script>
+        //1. Siempre debemos usar document.querySelector() para acceder un nodo del DOM. El parámetro SIEMPRE es un selector CSS
+
+        // Por ejemplo, aquí vamos a ver por consola el texto del h1
+        let titulo = document.querySelector('h1').textContent; // textContent es un string
+        console.log(titulo);
+
+        // Por ejemplo, aquí vamos a ver por consola el texto del h1
+        let titulo_2 = document.querySelector('#titulo').textContent; // textContent es un string
+        console.log(titulo_2);
+
+        // Por ejemplo, aquí vamos a ver por consola el texto del h1
+        let titulo_3 = document.querySelector('.titulo').textContent; // textContent es un string
+        console.log(titulo_3);
+
+        // Ha entrado un usuario a la app, que se llama "ManoloDev", y tenemos que ponerlo en el primer <p>
+        // Vamos a modificar el nodo #users-online
+        document.querySelector('#users-online').textContent = "ManoloDev";
+
+        // Ahora entra AinhoaGamer 
+        document.querySelector('#users-online').textContent += "-AinhoaGamer";
+
+        //Queremos que cuando manolo le de a "Pasar turno", le demos el turno a Ainhora
+        // 1. Asociar un evento click al botón de Manolo
+        // 2. Mostrar el panel de Ainhoa
+        // 3. Ocultar el panel de Manolo
+        function pasarTurnoAinhoa() {
+            console.log("Hemos entrado en la función del click");
+            document.querySelector('.panel-manolo').style.display = "none";
+            // #panel-ainhoa
+            document.querySelector('#panel-ainhoa').style.display = "block";
+        }
+
+        function pasarTurnoManolo() {
+            document.querySelector('#panel-manolo').style.display = "block";
+            // #panel-ainhoa
+            document.querySelector('#panel-ainhoa').style.display = "none";
+        }
+
+
+    </script>
+</body>
+
+</html>
