@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Maneras de asociar eventos</h1>
+    <button onclick="metodo1()">Mediante Etiqueta HTML</button>
+    <button id="boton-2">Mediante propiedad del objeto</button>
+    <button id="boton-3">Mediante un listener</button>
+
+    <script>
+        function metodo1() {
+            console.log("Asociar un evento mediante un atributo HTML");
+        }
+
+        function metodo2() {
+            console.log("Yo me ejecuto a través de una propiedad del objeto");
+        }
+
+        function metodo3() {
+            console.log("Ejecuto el evento mediante un listener");
+        }
+
+        // Metodo 2
+        // Asociar una función a la propiedad del objeto
+        // CUANDO me pasen el raton por encima, ejecutame la función metodo2
+        document.querySelector('#boton-2').onmouseover = function () {
+            console.log("Yo también soy una función asociada al evento mouseover");
+        };
+
+        // Método 3
+        // Asociar un listener
+        // 1. Seleccionar el elemento del DOM al cual queremos asociar el evento
+        // Es importante poner el nombre de la función sin paréntesis, porque no quiero ejecutar la función, solo asociarla. La función debe ser ejecutada cuando hagamos click en el botón
+        document.querySelector('#boton-3').addEventListener('click', metodo3);
+
+        document.querySelector('#boton-3').addEventListener('click', function () {
+            console.log("YO también me ejecuto");
+        });
+
+
+    </script>
+</body>
+
+</html>
