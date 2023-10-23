@@ -37,11 +37,14 @@
         // Asociar un listener
         // 1. Seleccionar el elemento del DOM al cual queremos asociar el evento
         // Es importante poner el nombre de la función sin paréntesis, porque no quiero ejecutar la función, solo asociarla. La función debe ser ejecutada cuando hagamos click en el botón
-        document.querySelector('#boton-3').addEventListener('click', metodo3);
 
         document.querySelector('#boton-3').addEventListener('click', function () {
             console.log("YO también me ejecuto");
         });
+        
+        document.querySelector('#boton-3').addEventListener('click', metodo3);
+
+
 
 
     </script>
