@@ -5,13 +5,12 @@ function firstNonConsecutive(arr) {
   while (i < arr.length && result == null) {
     // mentre no hagi arribar al fi de l'array I no hagi trobat un número no consecutiu, tinc feina
     //Recorremos el array de  números mientras se cumpla la condición
-    console.log("Voy a comprobar el número: ", arr[i]);
 
     if (arr[i] - arr[i - 1] !== 1) {
       //Comprobamos si el número actual y el número anterior no se incrementan en 1
       result = arr[i]; //Si se cumple, mostramos el número
     }
-    i++; //Si el siguiente número se incrementa en 1, incrementamos el valor de la i, y volemos a iniciar el bucle
+    i++;
   }
 
   return result; //Si al recorrer todo el array, se cumple mostramos null
