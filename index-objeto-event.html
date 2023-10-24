@@ -21,6 +21,14 @@
     <div id="main" class="box">
 
     </div>
+    <h2>Tienda</h2>
+    <section>
+        <ul id="alimentos">
+            <li id="leche">Leche</li>
+            <li id="patatas">Patatas</li>
+            <li id="brocoli">Brocoli</li>
+        </ul>
+    </section>
     <script>
         /* 1. Que es y como se puede explorar el objeto event */
         let box = document.querySelector('#main');
@@ -44,9 +52,27 @@
 
         });
 
-
         /* 3. La propiedad event.target ! */
         /* 4. Propagación de eventos, y como podemos usarla en nuestro beneficio */
+
+        /**
+         * Queremos detectar qué alimento ha clicado el usuario para añadirlo a una posible cesta de la compra
+         * 
+         */
+
+        let food = document.querySelector("#alimentos");
+        food.addEventListener("click", function (event) {
+            console.log("Has añadido un alimento a la cesta");
+            console.log("Queremos añadir el alimento: ", event.target);
+            console.log("Acceder al textContent del elemeto clicado: ", event.target.textContent);
+            console.log("Acceder al id del elemeto clicado: ", event.target.id);
+
+            // Pintar de amarillo el fondo del elemento clicado
+            event.target.style.backgroundColor = "yellow";
+
+        });
+
+
     </script>
 </body>
 
