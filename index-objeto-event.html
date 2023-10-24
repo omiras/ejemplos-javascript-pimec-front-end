@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>El Objeto Event</h1>
+    <div id="main" class="box">
+
+    </div>
     <script>
         /* 1. Que es y como se puede explorar el objeto event */
+        let box = document.querySelector('#main');
+
+
+        /** Cuando JavaScript ejecuta la función, automáticamente te provee de un objeto como parámetro de la función. Este objeto, tu NO se lo tienes pasar de ninguna manera, lo hace JavaScript de forma automática. Lo que si necesitamos hacer, es poner un nombre al parámetro*/
+        box.addEventListener('click', function (event) {
+            // Si quiero acceder a la propiedad .x del objeto event:
+            console.log(event.x);
+
+            // La propiedad target del objeto event, contiene exactamente aquel elemento del DOM que ha disparado el evento
+            console.log(event.target);
+
+        });
         /* 2. Propiedades interesantes del objeto event. Click y keyup */
+        /** Por ejemplo, queremos detectar que tecla ha pulsado el usuario para tomar decisiones (ejemplo palabradeldia, que rellenariamos la letra en la casilla que toque */
+        let body = document.querySelector('body');
+        body.addEventListener("keyup", function (event) {
+            console.log(event.key);
+            console.log(event.target);
+
+        });
+
+
         /* 3. La propiedad event.target ! */
         /* 4. Propagación de eventos, y como podemos usarla en nuestro beneficio */
     </script>
