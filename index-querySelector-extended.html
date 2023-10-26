@@ -12,6 +12,16 @@
 
 <body>
     <h1>USar querySelector fuera de .document</h1>
+    <section>
+        <h2>Añadir nuevo producto</h2>
+        <form id="add-new-product">
+            <label for="product-name">Nombre producto</label>
+            <input type="text" name="product-name" id="product-name">
+            <label for="product-price">Precio</label>
+            <input type="number" name="product-price" id="product-price" step="0.01">
+            <input type="submit" value="Añadir producto">
+        </form>
+    </section>
     <section class="container supermercado" id="super">
         <h2>Supermercado</h2>
         <article>
@@ -35,6 +45,7 @@
         </article>
 
     </section>
+
 
     <script>
         // Podemos user querySelector desde CUALQUIER nodo, no solo des de .document
@@ -63,12 +74,33 @@
 
 
         // Esta forma de definir una función es otra manera válida
-        
+
         // prices.forEach( precio => {
         //     console.log(precio);
         //     sumaTotal = sumaTotal + Number(precio.textContent);
         // });
 
+        let form = document.querySelector('#add-new-product');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Para añadir un elemento nuevo al DOM, tenemos que hacer lo siguiente
+
+            // 1. Crear el elemento padre que engloba el producto
+            let newProduct = document.createElement('article');
+
+            let productName = document.querySelector('#product-name').value;
+            let productPrice = document.querySelector('#product-price').value;
+
+
+            // 2. Rellenar su propiedad .innerHTML con todo lo que necesites
+            newProduct.innerHTML = `
+            <h3>${productName}</h3>
+            <p class="price">${productPrice}</p>`;
+
+            // 3. Estblecer el padre de este nodo que acabas de crear
+            document.querySelector('#super').appendChild(newProduct);
+        });
 
     </script>
 </body>
