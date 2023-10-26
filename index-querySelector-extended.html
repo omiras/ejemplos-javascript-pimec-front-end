@@ -16,29 +16,29 @@
         <h2>Supermercado</h2>
         <article>
             <h3>Patatas</h3>
-            <p>20</p>
+            <p class="price">20</p>
         </article>
         <article>
             <h3>Zanahorias</h3>
-            <p>10</p>
+            <p class="price">10</p>
         </article>
     </section>
     <section class="container" id="drogueria">
         <h2>Droguería</h2>
         <article>
             <h3>Lejía</h3>
-            <p>2</p>
+            <p class="price">2</p>
         </article>
         <article>
             <h3>Pasa de dientes</h3>
-            <p>1</p>
+            <p class="price">1</p>
         </article>
 
     </section>
 
     <script>
         // Podemos user querySelector desde CUALQUIER nodo, no solo des de .document
-        console.log(document.querySelector('#drogueria').querySelector('p'));
+        //console.log(document.querySelector('#drogueria').querySelector('p'));
 
         // Puedo invocar la función y pasarle cualquier nodo, que pintaré su color de fondo de amarillo
         pintarFondoAmarillo(document.querySelector('h1'));
@@ -47,6 +47,28 @@
         function pintarFondoAmarillo(nodo) {
             nodo.style.backgroundColor = "yellow";
         }
+
+        // Calculame cuanto me costaria comprarme cada uno de los artículos de esta tienda
+        let prices = document.querySelectorAll('.price');
+        // suma cada uno de los precios y muestra el resultado por consola
+
+        let sumaTotal = 0;
+
+        prices.forEach(function (precio) {
+            console.log(precio);
+            sumaTotal = sumaTotal + Number(precio.textContent);
+        });
+
+        console.log(sumaTotal);
+
+
+        // Esta forma de definir una función es otra manera válida
+        
+        // prices.forEach( precio => {
+        //     console.log(precio);
+        //     sumaTotal = sumaTotal + Number(precio.textContent);
+        // });
+
 
     </script>
 </body>
