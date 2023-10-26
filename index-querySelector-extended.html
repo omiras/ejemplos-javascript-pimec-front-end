@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/1.5.2/pico.min.css"
+        integrity="sha512-3gFq2IXMVlAQaUyahzhjDRivv0yqyXTb7xiy6ivTaG5Uz4hKI54uYxpQefdomgDVQ11eJVUbXG0YdPMDISiGgg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <h1>USar querySelector fuera de .document</h1>
+    <section class="container supermercado" id="super">
+        <h2>Supermercado</h2>
+        <article>
+            <h3>Patatas</h3>
+            <p>20</p>
+        </article>
+        <article>
+            <h3>Zanahorias</h3>
+            <p>10</p>
+        </article>
+    </section>
+    <section class="container" id="drogueria">
+        <h2>Droguería</h2>
+        <article>
+            <h3>Lejía</h3>
+            <p>2</p>
+        </article>
+        <article>
+            <h3>Pasa de dientes</h3>
+            <p>1</p>
+        </article>
+
+    </section>
+
+    <script>
+        // Podemos user querySelector desde CUALQUIER nodo, no solo des de .document
+        console.log(document.querySelector('#drogueria').querySelector('p'));
+
+        // Puedo invocar la función y pasarle cualquier nodo, que pintaré su color de fondo de amarillo
+        pintarFondoAmarillo(document.querySelector('h1'));
+
+        // Este función recibe un nodo del DOM y pinta su background color de amarillo
+        function pintarFondoAmarillo(nodo) {
+            nodo.style.backgroundColor = "yellow";
+        }
+
+    </script>
+</body>
+
+</html>
