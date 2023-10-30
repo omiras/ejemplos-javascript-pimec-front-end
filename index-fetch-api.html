@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Queremos que cuando se cargue este script, hagamos una petición GET a https://api.chucknorris.io/jokes/random y obtengamos un chiste aleatorio de Chuck Norris
+
+        // Tenemos que seguir esta estructura para conseguir hacer la petición https://lenguajejs.com/javascript/asincronia/async-await/#la-palabra-clave-async
+
+
+        // Muestra el chiste por consola
+        // La palabra reservada async indica que esta función es asíncrona, y usa funciones que requieren de gestionar esa asicronía
+
+
+        async function getRandomJoke() {
+            // await -> usado para gestionar funciones que se ejecutan de forma asíncrona, es decir, que van a tardar un ratito más o menos largo, en ejecutarse.
+            // Fetch es hacer una petición GET a la URL que pongo como parámetro
+            const respuesta = await fetch("https://api.chucknorris.io/jokes/random");
+            console.log("Response", respuesta);
+
+            // 2. Va a procesar la respuesta, para convertirla en un tipo de datos que sea capaz mi programa de entenderlo (objeto, array de objetos) 99% veces
+            // Le decimos a JavaScript que esa respuesta contiene un string en formato JSON. Queremos que lo convierta de string a objeto (o array de objetos)
+            const datos = await respuesta.json();
+            console.log(datos.value);
+        }
+
+        getRandomJoke();
+    </script>
+</body>
+
+</html>
