@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Fetch PokeAPI usando promesas encadenadas (código asíncrono)</h1>
+</body>
+<script>
+
+    // fetch: toma por parámetro la URL de la API o de allí donde quieras hacer una petición GET
+
+    // el fetch devuelve un concepto de JavaScript que se llama "promesa" (Promise).
+    // Es tan romántico como suena. Fetch nos "promete" que de aquí un tiempo determinado, nos va a devolver una respuesta de la petición que hemos hecho. Pero no es inmediato, tarda un tiempo (conectarse al servidor de la API, recibir todos los bytes con la respuesta,etc.)
+
+    // .then es otra manera de gestionar la asincronía. Significa algo así como "cuando tengas la info del fetch, ENTONCES ejecuta la función que te he pasado parámetro"
+
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+        .then(response => response.json())
+        .then(data => updateDOM(data));
+
+
+    function updateDOM(pokemonData) {
+        console.log("Ya tengo datos para actualizar el DOM: ", pokemonData);
+    }
+</script>
+
+</html>
