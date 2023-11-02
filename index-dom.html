@@ -73,6 +73,12 @@
             document.querySelector('#panel-ainhoa').style.display = "none";
         }
 
+        // cuando pasemos el ratón por encima del h1, pintamos el fondo de rojo
+        // Muchas veces los listener tienen definida la función asociada mediante la función flecha. Esto es porque  no nos interesa el nombre, y es una forma más escueta de escribirlo
+        const encabezado = document.querySelector('h1');
+        encabezado.addEventListener('mouseover', () => {
+            encabezado.style.backgroundColor = "red";
+        });
 
     </script>
 </body>
