@@ -9,7 +9,7 @@ let nombre = "Piluca";
 let edad = 18;
 
 if (edad >= 18) {
-console.log("Puedes pasar!!");
+    console.log("Puedes pasar!!");
 } else {
-console.log("Vuelve cuando cumplas los 18...");
+    console.log("Vuelve cuando cumplas los 18...");
 }

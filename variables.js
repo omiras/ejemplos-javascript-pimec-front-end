@@ -44,6 +44,7 @@ console.log("Número de pasajeros: ", numeroPasajeros);
 // Denisse ha encontrado un cupón para un descuento del 10% del billete
 let precioBilleteDescuento = precioBillete * 0.9; // * <-- operador de multiplicar. El punto es la forma que tenemos de definir los decimales en JavaScript
 
+
 console.log("Precio billete con descuento: ", precioBilleteDescuento);
 
 /** STRINGS */
