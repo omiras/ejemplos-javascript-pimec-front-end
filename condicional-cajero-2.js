@@ -1,4 +1,4 @@
-let saldo = 2;
+let saldo = 100;
 
 // queremos retirar 10 euros
 if (saldo>=10) {
