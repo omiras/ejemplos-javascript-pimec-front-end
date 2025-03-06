@@ -1,11 +1,14 @@
+// Programa que nos va a dar una clasificación de la nota en función de un valor entero
+
 let nota = 10;
+let calificacion;
 console.log("He realizado mi examen.");
 
 // Condición
 if (nota < 5) {
   calificacion = "Insuficiente";
 } else if (nota < 6) {
-  calificación = "Suficiente";
+  calificacion = "Suficiente";
 } else if (nota < 8) {
   calificacion = "Bien";
 } else if (nota <= 9) {
