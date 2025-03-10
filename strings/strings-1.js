@@ -1,18 +1,26 @@
 /**
- * Strings son un tipo de dato iterable
- * Ultimo ejercicio de variables del 5 de octubre hay ejemplos
+ * Se puede definir strings de 3 formas
  */
 
 let lenguaje = "JavaScript";
-console.log(
-  "quiero acceder a la primera letra del string almacenado en la variable lenguaje: ",
-  lenguaje[0]
-);
 
-console.log("Quedarme con un trocito del string: ", lenguaje.substring(0, 4));
+// Acceder a una posición de un string
+// Usamos [] (corchetes) y dentro de ponemos el índice al que queremos acceder
+// Y Los índices empiezan en el número 0 (primera posición del string)
 
-// Recorrer un string porque es un dato iterable
-lenguaje = "JavaScript";
-for (let i = 0; i < lenguaje.length; i++) {
-  console.log(lenguaje[i]);
-}
+console.log("Primera posición: ", lenguaje[2]);
+
+// Tamaño del string
+console.log("Tamaño del string: ", lenguaje.length);
+
+// Acceder a la última posición del string
+console.log("Última posición: ", lenguaje[9]); // índice manual
+console.log("Última posición: ", lenguaje[lenguaje.length - 1]); // índice usando el tamaño del string
+
+// Quedarme con un trocito del string
+let message = "Don't be sad, be happy!";
+let withSubstring = message.substring(0, 3);
+console.log(withSubstring); // <== Don
+ 
+let withSlice = message.slice(14);
+console.log(withSlice); // <==  be happy!

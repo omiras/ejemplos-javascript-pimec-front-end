@@ -4,9 +4,6 @@ let edad = 33;
 let nombre = "Palomo";
 let aficiones = "Fútbol";
 
-// let frase =
-//   "ME llamo " + nombre + " mi edad es " + edad + " y me gusta el " + aficiones;
-// console.log(frase);
+let message =`Me llamo ${nombre} y mi edad es ${edad}. Mi mayor afición es el ${aficiones.toLowerCase()}. El año que viene cumpliré ${edad + 1} años `;
 
-//backticks (accent obert)
-console.log(`Me llamo ${nombre.toUpperCase()} y mi edad ${edad} `);
+console.log(message);
