@@ -16,6 +16,7 @@ console.log("Tamaño del string: ", lenguaje.length);
 // Acceder a la última posición del string
 console.log("Última posición: ", lenguaje[9]); // índice manual
 console.log("Última posición: ", lenguaje[lenguaje.length - 1]); // índice usando el tamaño del string
+console.log("Última posición: ", lenguaje.slice(-1)); // usando slice y un índice negativo
 
 // Quedarme con un trocito del string
 let message = "Don't be sad, be happy!";
