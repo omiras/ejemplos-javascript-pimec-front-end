@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+  <body>
+    <h1>El vendedor</h1>
+
+    <ol>
+      <li>Recuerda: CTRL + S para salvar los cambios.</li>
+      <li>
+        Somos trabajadores de una tienda de ropa. Si alcanzamos el objetivo de
+        ventas, definido en la variable 'objetivoVentas', dicen que nos van a
+        pagar un 15% más que nuestro sueldo base
+      </li>
+      <li>
+        EJERCICIO 1: Crea las estructuras if..else necesarias para actualizar el
+        valor de la variable <b>sueldoFinal</b>, en función de si ha conseguido
+        las ventas objetivo para el mes de octubre.
+      </li>
+      <li>
+        EJERCICIO 2: Cambia el valor de la variable 'objetivoVentas' a 30. ¿Cuál
+        es el sueldoFinal ahora del empleado?
+      </li>
+    </ol>
+
+    <p style="border: 1px solid black" id="resultado"></p>
+
+    <script>
+      let ventasOctubre = 25;
+      let objetivoVentas = 25;
+      let sueldoBase = 3000;
+      let sueldoFinal;
+
+      // MODIFICAR A PARTIR DE AQUÍ
+      // if...else...actualizar sueldoFinal...
+
+      // Si las ventas de octubre superan el objetivo de ventas, entonces
+      // tenemos que actualizar la variable sueldo final con un 15% más
+      // de lo que hay en mi sueldo base
+      if (ventasOctubre >= objetivoVentas) {
+        sueldoFinal = sueldoBase + sueldoBase * 0.15;
+      } else {
+        sueldoFinal = sueldoBase;
+      }
+
+      // En caso contrario tan solo voy a recibir mi sueldo base. Debo actualizar la variable sueldoFinal con el valor de la variable sueldo base
+
+
+      // NO MODIFICAR A PARTIR DE AQUÍ
+
+      document.querySelector('#resultado').innerHTML = `
+El sueldo conseguido para este mes es: ${sueldoFinal} €`;
+    </script>
+  </body>
+</html>

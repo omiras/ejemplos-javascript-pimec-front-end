@@ -61,3 +61,4 @@ console.log("Mensaje al móvil urgente: ", mensajeMovilUrgente);
 // RETO: Calcula el precio final a pagar para reservar el viaje en Renfe con el precioBilleteDescuento. Muestra el precio final del billete por el terminal usando console.log 
 let precioFinalBillete = precioBilleteDescuento * numeroPasajeros;
 console.log("Precio final billete: ", precioFinalBillete);
+

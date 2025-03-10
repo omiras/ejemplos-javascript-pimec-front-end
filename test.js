@@ -1,1 +1,1 @@
-console.log(Math.random());
+onsole.log(Math.random());
