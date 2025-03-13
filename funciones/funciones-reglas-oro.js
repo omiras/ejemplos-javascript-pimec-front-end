@@ -26,5 +26,5 @@ let ivaCartas = 24; // 24% de IVA
 let zanahorias = 2;
 let ivaZanahorias = 4; // 4% de IVA
 
-console.log(calcularIVA(cartasMagic, ivaCartas));
-console.log(calcularIVA(zanahorias, ivaZanahorias));
+// console.log(calcularIVA(cartasMagic, ivaCartas));
+// console.log(calcularIVA(zanahorias, ivaZanahorias));
