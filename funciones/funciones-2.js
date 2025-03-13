@@ -9,9 +9,8 @@
  * ¿Que nombre le ponemos? Un nombre que nos de información sobre lo que va a hacer
  */
 function mostrarMensaje() {
-  console.log("Un mensaje!");
-  console.log("Otro mensaje!");
-  console.log("Etc");
+  console.log("¡Un mensaje!");
+  console.log("Yo soy otro mensaje");
 }
 
 /**
@@ -22,7 +21,7 @@ function mostrarMensaje() {
  * - Ejecutar una función
  */
 
-mostrarMensaje();
+// mostrarMensaje();
 // mostrarMensaje();
 // mostrarMensaje();
 
@@ -39,8 +38,8 @@ function saludar(nombre) {
 /**
  * Para usar una función parámetro, simplemente le pasamos un valor entre los paréntesis
  */
-
-// saludar("Patata");
+let estudiante = "Alejandro";
+// saludar(estudiante);
 // console.log("He llegado aquí!");
 
 /**
@@ -53,4 +52,5 @@ function saludoCompleto(nombre, apellidos) {
   console.log("Hola " + nombre + " " + apellidos);
 }
 
-// saludoCompleto("Maria", "Gómez López");
+saludoCompleto("Maria", "Gómez López");
+saludoCompleto("Jorge", "Gómez Pérez");

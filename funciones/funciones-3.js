@@ -4,14 +4,16 @@
 
 //
 function calcularIVA(precio) {
-  return precio * 0.21;
+  let IVA = precio * 0.21; 
+  return IVA;
 }
 
-let tensiometro = 15;
-let cartasMagic = 19;
+let precioOrdenador = 1000;
 
 /**
- * Calculame el IVA de estos dos productos y me lo sumas, para saber cuanto vamos a pagar de IVA
- */
-let resultado = calcularIVA(tensiometro) + calcularIVA(cartasMagic);
-console.log("El IVA total es: " + resultado);
+ * Dame el precio total del ordenador con el iva ya incluido
+*/
+let precioTotalOrdenador = calcularIVA(precioOrdenador) + precioOrdenador;
+console.log("Precio total ordenador: ", precioTotalOrdenador);
+
+
