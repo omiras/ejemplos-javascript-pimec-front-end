@@ -1,6 +1,6 @@
 // Programa que nos va a dar una clasificación de la nota en función de un valor entero
 
-let nota = 10;
+let nota = 8;
 let calificacion;
 console.log("He realizado mi examen.");
 

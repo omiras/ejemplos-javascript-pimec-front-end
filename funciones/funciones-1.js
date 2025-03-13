@@ -10,9 +10,8 @@ console.log("Holi");
 
 console.log("patata".toUpperCase());
 
-// Función que nos dice de qué tipo el valor de una variable
-let nombre = "Eusebio";
-console.log(typeof nombre);
+// Función que redondea un número al entero por defecto
+console.log(Math.floor(12.55));
 
 // No solo eso. JavaScript define muchas funciones en "variables" globales para poder usar.
 let numeroAleatorio = Math.random();

@@ -1,4 +1,4 @@
-//Podemos definir functiones  nosotros mismos.
+// Podemos definir functiones  nosotros mismos.
 // Aquí por ejemplo una función que muestra por consola un mensaje
 
 /**
@@ -53,4 +53,4 @@ function saludoCompleto(nombre, apellidos) {
   console.log("Hola " + nombre + " " + apellidos);
 }
 
-saludoCompleto("Maria", "Gómez López");
+// saludoCompleto("Maria", "Gómez López");
