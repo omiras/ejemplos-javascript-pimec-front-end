@@ -4,8 +4,8 @@
 
 let peces = ["Dory", "Nemo", "Burbujitas"];
 
-function mostrarPezPorConsola(pez) {
-  console.log(pez);
-}
 
-peces.forEach(mostrarPezPorConsola);
+
+pecesMayuscuas = peces.map( elem => elem.toUpperCase());
+console.log("🚀 ~ pecesMayuscuas:", pecesMayuscuas)
+
