@@ -1,1 +1,0 @@
-onsole.log(Math.random());
