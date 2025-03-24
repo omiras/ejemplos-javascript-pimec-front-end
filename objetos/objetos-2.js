@@ -21,4 +21,6 @@ let gato = {
   },
 };
 
+gato.cumpleGato();
+console.log(gato.edad);
 

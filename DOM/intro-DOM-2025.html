@@ -88,7 +88,7 @@
         }
 
         .misplaced {
-            background-color: #ffeb3b;
+            background-color: #c4b635;
             /* Amarillo */
             color: black;
             /* Letra negra */
@@ -98,7 +98,7 @@
 </head>
 
 <body>
-    <h1>La palabra del día</h1>
+    <h1 id="title" class="the-title">La palabra del día</h1>
     <div class="board">
         <div id="tile-0" class="board__tile"></div>
         <div id="tile-1" class="board__tile"></div>
@@ -162,13 +162,33 @@
     </div>
     
     <script>
-        const palabraDelDia = "LUCES";
+        const palabraDelDia = "MECHA";
+        console.log(palabraDelDia);
 
         /* 1.  Seleccionar un nodo h1 y mostrar su contenido textual */
+        const title = document.querySelector("#title").textContent;
+        console.log(title);
 
-        /* 2. El usuario escribe la palabra BUCLE. Las letras del teclado que ya ha probado hay que ponerlas en gris. 
+        /* 2. El usuario escribe la palabra BUCLE. Las letras del teclado que ya ha probado hay que ponerlas en gris. #322D31 */
+        document.querySelector('#key-B').style.backgroundColor = "#322D31";
+        document.querySelector('#key-U').style.backgroundColor = "#322D31";
+        document.querySelector('#key-C').style.backgroundColor = "#322D31";
+        document.querySelector('#key-L').style.backgroundColor = "#322D31";
+        document.querySelector('#key-E').style.backgroundColor = "#322D31";
 
-        /* 3.  Debemos actualizar 5 nodos y comparar letra a letra BUCLE con LUCES.  */
+
+        /* 3.  Debemos actualizar 5 nodos y comparar letra a letra MECHA con BUCLE. Vamos hacerlo mediante el añadir clases CSS */
+        document.querySelector('#tile-0').textContent = "B";
+        document.querySelector('#tile-0').classList.add("wrong");
+        document.querySelector('#tile-1').textContent = "U";
+        document.querySelector('#tile-1').classList.add("wrong");
+        document.querySelector('#tile-2').textContent = "C";
+        document.querySelector('#tile-2').classList.add("correct");
+        document.querySelector('#tile-3').textContent = "L";
+        document.querySelector('#tile-3').classList.add("wrong");
+        document.querySelector('#tile-4').textContent = "E";
+        document.querySelector('#tile-4').classList.add("misplaced");
+        
 
         /* 4. Imaginar que hemos ganado el juego. ¿Cómo hariamos para mostrar un mensaje de victoria cuando hayamos ganado el juego y ocultar el tablero ? */
 
