@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+
+            background-color: hsl(220 7% 8%);
+        }
+
+        .board {
+            border: 1px solid orange;
+            /** Elimina este borde cuando consigas el Ejercicio 1*/
+
+            /** Ejercicio 1: Aplica adecuadamente display:grid en este cotenedor para crear una rejilla de exactamente 6 filas y 5 columnas. Vas a necesitar añadir 4 propiedades en total https://oscarm.tinytake.com/df/172e2ef/thumbnail?type=attachments&version_no=0&file_version_no=0&thumbnail_size=preview*/
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 70px);
+
+        }
+
+        .board__tile {
+            border-color: rgb(66, 66, 66);
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            user-select: none;
+            font-size: 1.875rem;
+            width: 62.5px;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .keyboard {
+            padding: 10px;
+            max-width: 700px;
+
+            /* Ejercicio 2: Usa adecuadamete display:flex para distribuir las teclas sobre un contenedor flexible y se adapten al ancho del dispositivo (mínimo 375px, máximo la pantalla de un portátil)  */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+
+        }
+
+        .keyboard__key {
+            display: inline-block;
+            width: 40px;
+            padding: 0.2rem;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ddd;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .correct {
+            background-color: #4caf50;
+            /* Verde */
+            color: white;
+            /* Letra blanca */
+            font-weight: bold;
+        }
+
+        .wrong {
+            background-color: #616161;
+            /* Gris oscuro */
+            color: white;
+            /* Letra blanca */
+            font-weight: bold;
+        }
+
+        .misplaced {
+            background-color: #ffeb3b;
+            /* Amarillo */
+            color: black;
+            /* Letra negra */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>La palabra del día</h1>
+    <div class="board">
+        <div id="tile-0" class="board__tile"></div>
+        <div id="tile-1" class="board__tile"></div>
+        <div id="tile-2" class="board__tile"></div>
+        <div id="tile-3" class="board__tile"></div>
+        <div id="tile-4" class="board__tile"></div>
+        <div id="tile-5" class="board__tile"></div>
+        <div id="tile-6" class="board__tile"></div>
+        <div id="tile-7" class="board__tile"></div>
+        <div id="tile-8" class="board__tile"></div>
+        <div id="tile-9" class="board__tile"></div>
+        <div id="tile-10" class="board__tile"></div>
+        <div id="tile-11" class="board__tile"></div>
+        <div id="tile-12" class="board__tile"></div>
+        <div id="tile-13" class="board__tile"></div>
+        <div id="tile-14" class="board__tile"></div>
+        <div id="tile-15" class="board__tile"></div>
+        <div id="tile-16" class="board__tile"></div>
+        <div id="tile-17" class="board__tile"></div>
+        <div id="tile-18" class="board__tile"></div>
+        <div id="tile-19" class="board__tile"></div>
+        <div id="tile-20" class="board__tile"></div>
+        <div id="tile-21" class="board__tile"></div>
+        <div id="tile-22" class="board__tile"></div>
+        <div id="tile-23" class="board__tile"></div>
+        <div id="tile-24" class="board__tile"></div>
+        <div id="tile-25" class="board__tile"></div>
+        <div id="tile-26" class="board__tile"></div>
+        <div id="tile-27" class="board__tile"></div>
+        <div id="tile-28" class="board__tile"></div>
+        <div id="tile-29" class="board__tile"></div>
+    </div>
+    
+    <div class="keyboard">
+        <span id="key-A" class="keyboard__key">A</span>
+        <span id="key-B" class="keyboard__key">B</span>
+        <span id="key-C" class="keyboard__key">C</span>
+        <span id="key-D" class="keyboard__key">D</span>
+        <span id="key-E" class="keyboard__key">E</span>
+        <span id="key-F" class="keyboard__key">F</span>
+        <span id="key-G" class="keyboard__key">G</span>
+        <span id="key-H" class="keyboard__key">H</span>
+        <span id="key-I" class="keyboard__key">I</span>
+        <span id="key-J" class="keyboard__key">J</span>
+        <span id="key-K" class="keyboard__key">K</span>
+        <span id="key-L" class="keyboard__key">L</span>
+        <span id="key-M" class="keyboard__key">M</span>
+        <span id="key-N" class="keyboard__key">N</span>
+        <span id="key-O" class="keyboard__key">O</span>
+        <span id="key-P" class="keyboard__key">P</span>
+        <span id="key-Q" class="keyboard__key">Q</span>
+        <span id="key-R" class="keyboard__key">R</span>
+        <span id="key-S" class="keyboard__key">S</span>
+        <span id="key-T" class="keyboard__key">T</span>
+        <span id="key-U" class="keyboard__key">U</span>
+        <span id="key-V" class="keyboard__key">V</span>
+        <span id="key-W" class="keyboard__key">W</span>
+        <span id="key-X" class="keyboard__key">X</span>
+        <span id="key-Y" class="keyboard__key">Y</span>
+        <span id="key-Z" class="keyboard__key">Z</span>
+    </div>
+    
+    <script>
+        const palabraDelDia = "LUCES";
+
+        /* 1.  Seleccionar un nodo h1 */
+
+        /* 2. El usuario escribe la palabra BUCLE. Debemos actualizar 5 nodos y comparar letra a letra BUCLE con LUCES.  */
+
+        /* 3. Las letras que ya ha probado hay que ponerlas en gris. También vamos a actualizar la propiedad cursor-pointer a disabled */
+
+        /* 4. Imaginar */
+
+
+        
+    </script>
+</body>
+
+</html>
