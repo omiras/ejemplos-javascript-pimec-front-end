@@ -21,18 +21,4 @@ let gato = {
   },
 };
 
-gato.maullar();
-gato.bufar();
 
-/**
- * Muchas veces nos interesa que los propios métodos MODIFIQUEN el objeto sobre el cual se aplican
- */
-gato.cumpleGato();
-gato.cumpleGato();
-
-/**
- * Pues ahora a Bigotes le gusta el queso
- */
-gato.nuevaComidaFavorita("Queso");
-
-console.log(gato);
