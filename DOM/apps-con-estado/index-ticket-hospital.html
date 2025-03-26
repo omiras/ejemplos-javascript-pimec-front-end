@@ -1,0 +1,41 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Espera</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        body {
+            background-color: #004080;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        main {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #0080ff;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Próximo Paciente</h1>
+        <p id="ticket">Número: <strong>--</strong></p>
+        <p id="consulta">Consulta: <strong>--</strong></p>
+        <button id="siguientePaciente">Siguiente Paciente</button>
+    </main>
+
+    <script>
+        const nextPatients = ["SECA1", "ALNOR4", "ALNO7", "CHBA9"];
+    </script>
+</body>
+</html>
