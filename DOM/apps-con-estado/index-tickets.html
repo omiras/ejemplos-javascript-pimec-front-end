@@ -10,7 +10,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #4748ac;
         }
         main {
             background: white;
@@ -24,19 +24,43 @@
             border: none;
             color: white;
         }
+
+        h1, p {
+            color: black;
+
+        }
     </style>
 </head>
 <body>
     <main class="container">
         <h1>Carrito de Entradas</h1>
         <p>Entradas seleccionadas: <strong id="cantidadEntradas">0</strong></p>
+        <p>Precio por entrada: <strong id="precioPorEntrada"></strong> €</p>
         <p>Precio total: <strong id="precioTotal">0€</strong></p>
         <button id="agregarEntrada">Añadir Entrada</button>
     </main>
 
     <script>
-        const precioPorEntrada = 50;
-        let cantidadEntradas = 0;
+        const precioPorEntrada = 100; // precio por entrada 100€
+        let cantidadEntradas = 0; // numero de entradas seleccionadas
+
+        // cuando se carga el documento, debemos reflejar el estado inicial de la app en el DOM 
+        document.querySelector("#precioPorEntrada").textContent = precioPorEntrada;
+
+        // asociar eventos a los elemntos accionables
+        const btn = document.querySelector("#agregarEntrada");
+
+        btn.addEventListener("click", function(){
+            // Actualizar las variables de estado. En este caso, incrementar el valor de la variable cantidadEntradas en una unidad
+            cantidadEntradas = cantidadEntradas + 1;
+
+            // Actualizo el nodo donde se muestra visualmente el numero de entradas
+            document.querySelector("#cantidadEntradas").textContent = cantidadEntradas;
+
+            // Actualizo el precio total para que lo pueda ver el usuario
+            document.querySelector("#precioTotal").textContent = cantidadEntradas * precioPorEntrada;
+        });
+
     </script>
 </body>
 </html>
