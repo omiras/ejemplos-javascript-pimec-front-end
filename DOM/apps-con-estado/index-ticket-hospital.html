@@ -29,13 +29,31 @@
 <body>
     <main class="container">
         <h1>Próximo Paciente</h1>
-        <p id="ticket">Número: <strong>--</strong></p>
-        <p id="consulta">Consulta: <strong>--</strong></p>
+        <p >Número: <strong id="ticket">--</strong></p>
         <button id="siguientePaciente">Siguiente Paciente</button>
     </main>
 
     <script>
-        const nextPatients = ["SECA1", "ALNOR4", "ALNO7", "CHBA9"];
+        // Variable con el estado de la aplicación. 
+        // Cola de pacientes
+        const nextPatients = ["SECA1", "ALNOR2", "ALAL3", "CHBA4"];
+
+        const btn = document.querySelector("#siguientePaciente");
+        btn.addEventListener("click", function() {
+            // Cuando el médico pide el siguiente paciente, debemos modificar el estado de la aplicación
+            const nextTurn = nextPatients.shift();
+
+            // Actualizo el DOM (interfaz) con el nuevo estado de la app
+            document.querySelector("#ticket").textContent = nextTurn;
+
+            // TODO (por hacer): Si me quedo sin pacientes, debería controlarlo
+            // ¿Cuando es que me quedo sin pacientes? cuando nextPatients.length == 0
+            if (nextPatients.length == 0) {
+                // eliminar el botón
+                btn.style.display = "none";
+            }
+        });
+
     </script>
 </body>
 </html>
