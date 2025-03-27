@@ -44,6 +44,14 @@
             <li id="brocoli">Brocoli</li>
         </ul>
     </section>
+    <section>
+        <h2>Burbujeo de eventos</h2>
+        <ul id="animales">
+            <li>Vaca</li>
+            <li>Cerdo</li>
+            <li>Camello</li>
+        </ul>
+    </section>
     <script>
         /* 1. Que es y como se puede explorar el objeto event */
         const map = document.querySelector("#map");
@@ -78,6 +86,11 @@
             // Cambia a amarillo el color de fondo del elemento que ha disparado el evento
             evt.target.style.backgroundColor = "yellow";
         }
+
+        // 4 Event bubbling
+        document.querySelector('#animales').addEventListener("click", function(e){
+            console.log(e.target.textContent);
+        });
 
     </script>
 </body>
