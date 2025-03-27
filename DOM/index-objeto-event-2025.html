@@ -30,7 +30,7 @@
     <p>El objeto nos permite obtener infroamción sobre el evento que se acaba de producir</p>
     <h2>El Mapa</h2>
     <p>Podemos consultar el objeto evento para saber en que coordenadas X,Y ha hecho clic el usuario. También podemos saber si, por ejemplo, mantenía pulsada la tecla Ctrl en el momento de hacer clic.</p>
-    <img src="mapa.jpg" alt="mapa">
+    <img id="map" src="mapa.jpg" alt="mapa">
     <h2>¿Que tecla has puslado?</h2>
     <p>Mediante la captura del evento <em>keyup</em> podemos conocer que tecla ha puslado el usuario</p>
     <input type="text" name="" id="text-input">
@@ -46,7 +46,38 @@
     </section>
     <script>
         /* 1. Que es y como se puede explorar el objeto event */
-        let box = document.querySelector('#main');
+        const map = document.querySelector("#map");
+        map.addEventListener("click", function(event){
+            console.log(event.x);
+            console.log(event.ctrlKey);
+
+            if (event.ctrlKey) {
+                console.log("Deseleccionar comarca");
+            } else {
+                console.log("Añadir comarca");
+            }
+            
+        });
+
+        // 2. Evento 'keyup', 'keydown'
+        // ¿Qué tecla ha pulsado el usuario?
+        const input = document.querySelector('#text-input');
+        input.addEventListener("keyup", function(e) {
+            document.querySelector('#last-pressed-key').textContent = e.key; // La propiedad 'key' del objeto 'keyboard event' contiene la letra que ha pulsado el usuario
+        });
+
+        // 3. Existe una propiedad común en todos los eventos muy importante. Dicha propiedad es la la propiedad .target. 
+        // La propiedad .target contiene el elemento del DOM que ha causado el evento
+        document.querySelector("#brocoli").addEventListener("click", selectFood);
+
+        document.querySelector("#patatas").addEventListener("click", selectFood);
+
+        document.querySelector("#leche").addEventListener("click", selectFood);
+
+        function selectFood(evt) {
+            // Cambia a amarillo el color de fondo del elemento que ha disparado el evento
+            evt.target.style.backgroundColor = "yellow";
+        }
 
     </script>
 </body>
