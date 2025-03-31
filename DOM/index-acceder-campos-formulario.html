@@ -22,16 +22,24 @@
             <option value="alta">Temporada Alta (Incrementar un 5% el precio final)</option>
         </select>
 
+
         <label for="coste">Coste final (Debemos aplicar un impuesto de tasa turística de 10€ a todas las
             reservas):</label>
         <input type="number" name="coste" id="coste" disabled>
+        <p id="feedback-message"></p>
         <button>Reservar</button>
     </div>
     <script>
-        // Queremos que al hacer clic en el botón "Reservar" sume 10 al precio de la reserva que han puesto en el primero <input>.
 
         //1. Seleccionar el elemento del DOM que queremos aplicar el evento y lo guardamos en una variable
         const button = document.querySelector('button');
+
+        // 2. Añadimos el listener al evento 'click'
+        // TODO
+
+        // 3. Calculamos el precio final en función de la temporada escogida y el precio de la reserva
+
+        // 4. Actualizamos el coste final de la reserva y el mensaje de feedback. Importante y fallo habitual: si queremos actualizar el valor de un control de formulario, debemos actualizar el campo .value. Si queremos actualizar la información textual de cualquier nodo del DOM, generalmente es la propiedad .textContent. 
 
 
     </script>
