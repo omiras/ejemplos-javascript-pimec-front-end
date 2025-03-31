@@ -23,8 +23,7 @@
         </select>
 
 
-        <label for="coste">Coste final (Debemos aplicar un impuesto de tasa turística de 10€ a todas las
-            reservas):</label>
+        <label for="coste">Coste final :</label>
         <input type="number" name="coste" id="coste" disabled>
         <p id="feedback-message"></p>
         <button>Reservar</button>
@@ -35,13 +34,30 @@
         const button = document.querySelector('button');
 
         // 2. Añadimos el listener al evento 'click'
-        // TODO
+        button.addEventListener("click", function(){
+            // mostrar con consola el valor que hay en el precio del hotel
+            let price = document.querySelector("#precio").value;
+            
+            // Aplicamos descuentos o incrementos en función de la temporada seleccionada
+            const season = document.querySelector("#temporada").value;
 
-        // 3. Calculamos el precio final en función de la temporada escogida y el precio de la reserva
+            if (season == "baja") {
+                price = price * 0.95;
+            } else if (season == "alta"){
+                price = price * 1.05;
+            }
 
-        // 4. Actualizamos el coste final de la reserva y el mensaje de feedback. Importante y fallo habitual: si queremos actualizar el valor de un control de formulario, debemos actualizar el campo .value. Si queremos actualizar la información textual de cualquier nodo del DOM, generalmente es la propiedad .textContent. 
+            // 4. Actualizamos el coste final de la reserva y el mensaje de feedback. Importante y fallo habitual: si queremos actualizar el valor de un control de formulario, debemos actualizar el campo .value. Si queremos actualizar la información textual de cualquier nodo del DOM, generalmente es la propiedad .textContent. 
 
+            // Actualizamos el input #coste con el precio final
+            document.querySelector('#coste').value = price;
 
+            // Damos un poco de feedback sobre el cálculo 
+            const message = `El precio de tu reserva son ${price} € y has seleccionada temporada ${season}`;
+            document.querySelector('#feedback-message').textContent = message; 
+            
+
+        });
     </script>
 </body>
 
