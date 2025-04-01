@@ -77,9 +77,9 @@
 
         // Tenemos que comprobar si han escogido alguna talla. En tal caso, ya podemos habilitar el botón de Enviar comanda. Diremos que han seleccionado una talla si event.target.value es diferente a un string vacío
         if (event.target.value != '') {
-            btnSendOrder.disabled = false;
+            btnSendOrder.disabled = false; // habilitamos el botón para que pueda ser pulsado
         } else {
-            btnSendOrder.disabled = true;
+            btnSendOrder.disabled = true; // deshabilitamos el botón para que NO pueda ser pulsado
         }
 
        });
