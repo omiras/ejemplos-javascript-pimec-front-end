@@ -48,7 +48,7 @@
                 <label for="color">Choose your color</label>
                 <input type="color" id="color" name="color" value="#FFFFFF">
             </div>
-            <button disabled>Enviar Comanda</button>
+            <button id="send-order" disabled>Enviar Comanda</button>
     </div>
 
     <!-- NO modificar a partir de aquí -->
@@ -69,10 +69,19 @@
        const imgShirt = document.querySelector('#shirt-image');
        const selectSize = document.querySelector('#size');
        const spanSelectedSize = document.querySelector('#selected-size');
+       const btnSendOrder = document.querySelector('#send-order');
 
        selectSize.addEventListener("change", function(event){
         console.log("Talla seleccionada: ", event.target.value);
         spanSelectedSize.textContent = event.target.value;
+
+        // Tenemos que comprobar si han escogido alguna talla. En tal caso, ya podemos habilitar el botón de Enviar comanda. Diremos que han seleccionado una talla si event.target.value es diferente a un string vacío
+        if (event.target.value != '') {
+            btnSendOrder.disabled = false;
+        } else {
+            btnSendOrder.disabled = true;
+        }
+
        });
        
        inputColor.addEventListener("input", function(event){
