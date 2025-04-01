@@ -30,8 +30,8 @@
     <div class="container">
         <h2>Completa el formulario</h2>
             <div class="form-group">
-                <label for="words">Texto:</label>
-                <input type="text" id="words" name="words" required maxlength="15" placeholder="max 15 characters">
+                <label for="inputWords">Texto:</label>
+                <input type="text" id="inputWords" name="inputWords" required maxlength="15" placeholder="max 15 characters">
             </div>
 
             <div class="form-group">
@@ -56,14 +56,37 @@
         <div class="shirt" id="shirt">
             <div>
                 <h2 style="color: black">Selected size: <span id="selected-size"></span></h2>
-                <img style="width:100%" src="t-shirt.png" alt="">
+                <img id="shirt-image" style="width:100%" src="t-shirt.png" alt="">
                 <span class="shirt-text"></span>
             </div>
         </div>
     </div>
 
     <script>
+       const inputWords = document.querySelector('#inputWords');
+       const inputColor = document.querySelector('#color');
+       const spanShirtText = document.querySelector('.shirt-text');
+       const imgShirt = document.querySelector('#shirt-image');
+       const selectSize = document.querySelector('#size');
+       const spanSelectedSize = document.querySelector('#selected-size');
+
+       selectSize.addEventListener("change", function(event){
+        console.log("Talla seleccionada: ", event.target.value);
+        spanSelectedSize.textContent = event.target.value;
+       });
        
+       inputColor.addEventListener("input", function(event){
+        console.log("Color seleccionado: ", event.target.value);
+        imgShirt.style.backgroundColor = event.target.value; // inputColor.value
+       });
+
+       inputWords.addEventListener("change", function(event){
+        console.log("Value que ha cambiado: ", inputWords.value);
+        console.log("Value obtenido del objeto evento: ", event.target.value);
+
+        spanShirtText.textContent = event.target.value;
+
+       });
     </script>
 </body>
 
