@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        .shirt {
+            width: 400px;
+            height: 400px;
+            background-color: #ffffff;
+
+            text-align: center;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .shirt-text {
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            left: 100px;
+            top: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Completa el formulario</h2>
+        <form action="https://request-data.onrender.com/register-tshirt" method="post" class="form" id="shirt-form">
+            <div class="form-group">
+                <label for="words">Texto:</label>
+                <input type="text" id="words" name="words" required maxlength="15" placeholder="max 15 characters">
+            </div>
+
+            <div class="form-group">
+                <label for="size">Choose your size</label>
+                <select id="size" name="size">
+                    <option value="M">M (medium)</option>
+                    <option value="S">S (small)</option>
+                    <option value="L">L (large)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Choose your color</label>
+                <input type="color" id="color" name="color" value="#ff0000">
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    <!-- NO modificar a partir de aquí -->
+    <div class="container">
+        <div class="shirt" id="shirt">
+            <div>
+                <h2 style="color: black">Selected size: <span id="selected-size"></span></h2>
+                <img style="width:100%" src="t-shirt.png" alt="">
+                <span class="shirt-text"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+
+</html>
