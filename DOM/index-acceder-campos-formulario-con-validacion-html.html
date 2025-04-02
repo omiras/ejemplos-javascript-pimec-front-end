@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Hotelera</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+</head>
+
+<body>
+    <h1>Reserva Hotel</h1>
+    <div class="container">
+        <form action="" id="reservation">
+            <label for="precio">Precio Reserva: </label>
+            <input type="number" name="precio" id="precio" min="10" max="10000" required>
+            <label for="temporada">Temporada: </label>
+            <select name="temporada" id="temporada">
+                <option value="baja">Temporada Baja (Aplica 5% descuento sobre el precio final)</option>
+                <option value="media" selected>Temporada Media</option>
+                <option value="alta">Temporada Alta (Incrementar un 5% el precio final)</option>
+            </select>
+            <label for="coste">Coste final :</label>
+            <input type="number" name="coste" id="coste" disabled>
+            <p id="feedback-message"></p>
+            <input type="submit" value="Reservar">
+        </form>
+    </div>
+    <script>
+
+        //1. Seleccionar el elemento del DOM que queremos aplicar el evento y lo guardamos en una variable
+        const form = document.querySelector('#reservation');
+
+        // 2. Añadimos el listener al evento 'click'
+        form.addEventListener("submit", function(event){
+
+            // metodo para evitar que se ejecute la funcionalidad del evento
+            event.preventDefault();
+
+            // mostrar con consola el valor que hay en el precio del hotel
+            let price = document.querySelector("#precio").value;
+            
+            // Aplicamos descuentos o incrementos en función de la temporada seleccionada
+            const season = document.querySelector("#temporada").value;
+
+            if (season == "baja") {
+                price = price * 0.95;
+            } else if (season == "alta"){
+                price = price * 1.05;
+            }
+
+            // 4. Actualizamos el coste final de la reserva y el mensaje de feedback. Importante y fallo habitual: si queremos actualizar el valor de un control de formulario, debemos actualizar el campo .value. Si queremos actualizar la información textual de cualquier nodo del DOM, generalmente es la propiedad .textContent. 
+
+            // Actualizamos el input #coste con el precio final
+            document.querySelector('#coste').value = price;
+
+            // Damos un poco de feedback sobre el cálculo 
+            const message = `El precio de tu reserva son ${price} € y has seleccionada temporada ${season}`;
+            document.querySelector('#feedback-message').textContent = message; 
+            
+
+        });
+    </script>
+</body>
+
+</html>
