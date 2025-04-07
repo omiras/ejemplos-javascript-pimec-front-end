@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cronómetro Simple</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #cronometro {
+      font-size: 3em;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cronometro">0</div>
+
+  <script>
+    let segundos = 0;
+    const cronometro = document.getElementById('cronometro');
+
+    function updateChrono() {
+      segundos++;
+      cronometro.textContent = segundos;
+    }
+
+    // el priemr parámetro es una función
+    setInterval(updateChrono, 1000); // 1000 ms ->  1s
+  </script>
+
+</body>
+</html>

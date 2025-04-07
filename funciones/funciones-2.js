@@ -8,6 +8,9 @@
  * Nombre de la función en camelCase, y siempre lleva ().
  * ¿Que nombre le ponemos? Un nombre que nos de información sobre lo que va a hacer
  */
+
+mostrarMensaje();
+
 function mostrarMensaje() {
   console.log("¡Un mensaje!");
   console.log("Yo soy otro mensaje");
@@ -21,7 +24,6 @@ function mostrarMensaje() {
  * - Ejecutar una función
  */
 
-// mostrarMensaje();
 // mostrarMensaje();
 // mostrarMensaje();
 
@@ -52,5 +54,5 @@ function saludoCompleto(nombre, apellidos) {
   console.log("Hola " + nombre + " " + apellidos);
 }
 
-saludoCompleto("Maria", "Gómez López");
-saludoCompleto("Jorge", "Gómez Pérez");
+// saludoCompleto("Maria", "Gómez López");
+// saludoCompleto("Jorge", "Gómez Pérez");
