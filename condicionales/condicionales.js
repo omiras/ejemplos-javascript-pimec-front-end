@@ -6,8 +6,8 @@
  * Si la palabra introducida por el usuario en www.palabradeldia.com es correcta, informa al usuario que el juego ha acabado y ha ganado. En caso contrario, informa al usuario que puede seguir jugando
  */
 
-let palabraCorrecta = "muñon";
-let palabraProbada = "muñon";
+let palabraCorrecta = "bongo";
+let palabraProbada = "bongo";
 
 /**
  * Si la expresión se cumple...
@@ -17,10 +17,6 @@ let palabraProbada = "muñon";
 if (palabraCorrecta == palabraProbada) {
   console.log("Has acertado la palabra correcta. Fin de juego");
   console.log("Efectivamente, la palabra era " + palabraCorrecta);
-  
 } else {
-/**
- * En caso contrario....ejecuta esto
- */
-  console.log("Lástima! Te has equivocado! Sigue jugando!");
+  console.log("La palabra que has probado no es correcta. Prueba otra vez");
 }

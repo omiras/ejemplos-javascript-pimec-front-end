@@ -13,11 +13,22 @@ if (haceBuenTiempo || tengoParaguas) {
     console.log("Me quedo en casa ☔");
 }
 
+// Operador OR (EOI)
+let B1Aprobado = false;
+let pruebaNivelB2 = 8; // nota mínima para entrar
+
+if (B1Aprobado || pruebaNivelB2>=8) {
+    console.log("Puedo empezar B2");
+} else {
+    console.log("Deber hacer antes el B1");
+}
+
+
 // Operador lógico && (AND)
 
 // Solamente puedo ir al cine si tengo dinero Y quedan entradas
 
-let tengoDinero = true;
+let tengoDinero = false;
 let hayEntradas = true;
 
 if (tengoDinero && hayEntradas) {
@@ -32,7 +43,7 @@ if (tengoDinero && hayEntradas) {
 
 // Operador lógico ! (NOT)
 
-// Si NO tengo comida casa, entonces voy a pedir comida a domicilio
+// Si NO tengo comida en casa, entonces voy a pedir comida a domicilio
 
 let tengoComidaEnCasa = false;
 
@@ -40,6 +51,15 @@ if (!tengoComidaEnCasa) {
     console.log("Pido comida a domicilio 🍔");
 } else {
     console.log("Cocino en casa 🍳");
+}
+
+// Si hay comida en casa, no pido a domicilio
+let hayComidaEnCasa = false;
+
+if (hayComidaEnCasa) {
+    console.log("como en casa");
+} else {
+    console.log("pido a domicilio");
 }
 
 

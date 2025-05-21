@@ -6,8 +6,9 @@
 
 
 let nombre = "Piluca";
-let edad = 18;
+let edad = 17;
 
+// si edad es mayor O igual a 18
 if (edad >= 18) {
     console.log("Puedes pasar!!");
 } else {
