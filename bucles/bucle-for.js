@@ -9,7 +9,7 @@
 // i++ -> incremento. Indica de que forma tenemos que progresar en el bucle. En este caso, sumamos 1 al valor de la variable i.
 
 for (let i = 0; i < 100; i++) { 
-    // console.log("Hola");
+    console.log("Hola");
 }
 
 // console.log("He acabado el trabajo dentro del bucle");
