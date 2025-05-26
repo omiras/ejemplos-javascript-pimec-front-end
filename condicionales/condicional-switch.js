@@ -7,7 +7,7 @@
  * 5-100 no es urgente
  */
 
-let prioridad = 7;
+let prioridad = 10;
 // En función de este valor, te van a asignar una categoría : "urgencia vital", "Urgencia Prioritaria", "Urgencia NO Prioritaria", "NO urgente"
 let categoria;
 
@@ -28,6 +28,8 @@ switch (prioridad) {
 }
 
 console.log(categoria);
+
+
 
 // switch (error.message) {
 //     case "NameConflictError":
